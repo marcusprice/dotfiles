@@ -27,6 +27,3 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
--- Clear SignColumn highlighting using an autocmd after VimEnter
-vim.cmd([[autocmd VimEnter * highlight clear SignColumn]])
-vim.cmd([[autocmd VimEnter * highlight Normal guibg=NONE ctermbg=NONE]])
