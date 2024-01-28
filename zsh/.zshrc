@@ -3,7 +3,7 @@ zstyle ":vcs_info:git:*" formats " %F{magenta}git:(%F{red}%b%F{magenta})"
 
 # prompt
 setopt PROMPT_SUBST
-PROMPT='%F{green}➜ %F{blue}%2~${vcs_info_msg_0_} %(?.%F{green}✔.%F{red}✘)%F{default} '
+PROMPT='%F{green}➜  %F{blue}%2~${vcs_info_msg_0_} %(?.%F{green}✔.%F{red}✘)%F{default} '
 
 # alias
 alias edit-src="vim ~/.zshrc"
@@ -13,6 +13,7 @@ alias ls="lsd -la"
 alias cat="bat"
 alias tree="tree -I node_modules"
 alias vim-config="nvim -c 'cd ~/.config/nvim' ~/.config/nvim"
+alias python="python3.12"
 
 # auto completion
 autoload -Uz compinit && compinit
@@ -26,6 +27,10 @@ zstyle ':completion:*' list-suffixes zstyle ':completion:*' expand prefix suffix
 # bun js
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# go
+export GOPATH="/Users/marcusprice/code/go"
+export GOBIN="/Users/marcusprice/code/go/bin"
 
 # Load version control information
 autoload -Uz vcs_info

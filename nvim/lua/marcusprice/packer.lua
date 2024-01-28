@@ -13,15 +13,16 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
-    use({
-        'gruvbox-community/gruvbox',
-        as = 'gruvbox',
-        config = function()
-            vim.cmd('colorscheme gruvbox')
-            vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-            vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-        end
-    })
+    -- use({
+    --     'gruvbox-community/gruvbox',
+    --     as = 'gruvbox',
+    --     config = function()
+    --         vim.cmd('colorscheme gruvbox')
+    --         vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+    --         vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+    --     end
+    -- })
+    use({ 'rose-pine/neovim', as = 'rose-pine' })
 
     use({"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"})
     use("tpope/vim-fugitive")
@@ -29,7 +30,7 @@ return require('packer').startup(function(use)
 
     use {
         'VonHeikemen/lsp-zero.nvim',
-        branch = 'v1.x',
+        branch = 'v2.x',
         requires = {
             -- LSP Support
             {'neovim/nvim-lspconfig'},
@@ -57,6 +58,8 @@ return require('packer').startup(function(use)
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
+    use {'prettier/vim-prettier'} 
+    use {'fatih/vim-go'}
 
 end)
 
