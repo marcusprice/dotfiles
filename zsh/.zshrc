@@ -35,3 +35,9 @@ export GOBIN="/Users/marcusprice/code/go/bin"
 # Load version control information
 autoload -Uz vcs_info
 precmd() { vcs_info }
+
+if [ -f ~/.zshrc_secret ]; then
+    source ~/.zshrc_secret
+else
+    print "FYI: ~/.zsh_secret not found."
+fi
