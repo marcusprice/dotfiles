@@ -40,7 +40,19 @@ return {
         -- when the Rust fuzzy matcher is not available, by using `implementation = "prefer_rust"`
         --
         -- See the fuzzy documentation for more information
-        fuzzy = { implementation = "prefer_rust_with_warning" }
+        fuzzy = { implementation = "prefer_rust_with_warning" },
+        enabled = function()
+            -- Get the current buffer's filetype
+            local filetype = vim.bo.filetype
+
+            -- Disable autocomplete for gitcommit
+            if filetype == "gitcommit" or filetype == "gitrebase" then
+                return false
+            end
+
+            -- Default conditions (avoids breaking prompt buffers like Telescope)
+            return vim.bo.buftype ~= "prompt" and vim.b.completion ~= false
+        end,
     },
-    opts_extend = { "sources.default" }
+    opts_extend = { "sources.default" },
 }
