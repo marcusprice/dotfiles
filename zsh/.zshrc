@@ -12,10 +12,12 @@ zstyle :compinstall filename '/home/marcusprice/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-#
-# prompt
+
+#alt-L and alt-R word toggle
 bindkey -M viins '^[[1;3D' backward-word
 bindkey -M viins '^[[1;3C' forward-word
+
+# prompt
 autoload -Uz vcs_info
 precmd() {
     local exit_code=$?
