@@ -14,6 +14,8 @@ compinit
 # End of lines added by compinstall
 #
 # prompt
+bindkey -M viins '^[[1;3D' backward-word
+bindkey -M viins '^[[1;3C' forward-word
 autoload -Uz vcs_info
 precmd() {
     local exit_code=$?

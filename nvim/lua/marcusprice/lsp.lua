@@ -1,5 +1,6 @@
 vim.lsp.enable('typescript-language-server')
 vim.lsp.enable('lua-language-server')
+vim.lsp.enable('bash-language-server')
 vim.diagnostic.config({
     virtual_text = true,
     float = {

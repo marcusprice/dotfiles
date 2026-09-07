@@ -43,13 +43,13 @@ echo "setting up symlinks..."
 if [[ -L ~/.zshrc ]]; then
     echo "zshrc already symlinked"
 else
-    ln -s ./zsh/.zshrc ~/.zshrc
+    ln -s ~/.config/zsh/.zshrc ~/.zshrc
     echo "zshrc symlinked"
 fi
 
 if [[ -L ~/.tmux.conf ]]; then
     echo "tmux already symlinked"
 else
-    ln -s ./tmux/.tmux.conf ~/.tmux.conf
+    ln -s ~/.config/tmux/.tmux.conf ~/.tmux.conf
     echo "tmux.conf symlinked"
 fi
