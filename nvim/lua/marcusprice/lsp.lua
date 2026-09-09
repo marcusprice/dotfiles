@@ -15,3 +15,5 @@ end, { desc = "Next diagnostic" })
 vim.keymap.set("n", "[d", function()
   vim.diagnostic.jump({ count = -1, float = true })
 end, { desc = "Previous diagnostic" })
+
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
